@@ -1,0 +1,18 @@
+Hola gente!
+
+Lo que descubri, haciendo el code kata con TDD que envie antes, es que el algoritmo fue surgiendo con:
+
+- Recorrer la palabra por letra
+- Acumular la letra en la silaba que se esta formando
+- Cada vez que hay una vocal, se corta la silaba y se pasa a otra
+- Si la letra en proceso es la primera de una silaba, se ven los casos especiales para "pegarla" a la anterior silaba
+
+Solo fue luego cuestion de plasmar los casos especiales (desde diptongs, triptongos, silabas terminando en r, n, s, l, etc). Notablemente, asi, la u con dieresis nunca necesite tomarla como vocal, el algoritmo de arriba la ubica perfecto. Para el hiato (ri-os, con la i acentuada), me basto reconocer i y u acentuadas como vocales abiertas, y voila!
+
+Lo mas raro a poner es la ye, y casos especiales que me faltan (alguna palabra mejicana que termina con 2 consonantes, o una silaba que termina con x)
+
+Pero TDD rocks! Si hasta yo que no se Python, pude escribirlo ;-)
+
+Nos leemos!
+
+Angel "Java" Lopez

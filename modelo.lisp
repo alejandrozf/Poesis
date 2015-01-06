@@ -1,0 +1,3 @@
+(defstruct fonema
+	valor
+	simbolo)
