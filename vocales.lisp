@@ -1,6 +1,6 @@
 ;;FUNCIONES DE CLASIFICACION DE VOCALES y SECUENCIAS VOCALICAS
 
-(load "modelo.lisp")
+(load "modelo")
  
 (defun in-aou? (caracter)
 	(when caracter 

@@ -22,7 +22,7 @@
 	(let ((val (aref palabra i)))
 		(if (or (vocal? val) (sonido-literal? val))
 			(make-fonema 
-					:valor (make-string 1 :initial-element val))
+					:valor (make-string 1 :initial-element (char-upcase val)))
 			(case (char-upcase val) 
 				((#\B) (gf-caso-b palabra i))
 				((#\C) (gf-caso-c palabra i))
