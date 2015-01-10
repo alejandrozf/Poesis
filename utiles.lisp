@@ -15,7 +15,7 @@
 ;;(retorna nil si se va de rango)
 (defun next-char (palabra i)
   (if (<= 0 (1+ i) (1- (length palabra)))
-	    (elt palabra (1+ i))))
+      (elt palabra (1+ i))))
 
 ;;Un 'append + generalizado que toma tambien atomos 
 (defun append-all (head &rest tail)
@@ -24,3 +24,16 @@
 	       (mapcar (lambda (c) 
 			 (if (listp c) c (list c)))
 		       tail))))	
+
+(defun split-string (str &optional (delim #\space))
+  (loop for i across (format nil "~a~a" str delim)
+	with word = nil
+	with result = nil
+	if (eql i delim)
+	do (push (coerce (reverse word) 'string) result)
+	   (setf word nil)
+	else
+	do (push i word)
+	finally (return (reverse result))))
+
+(split-string "ITA y Ale")

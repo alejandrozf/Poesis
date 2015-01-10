@@ -5,5 +5,5 @@ Test que fallan:
 	- "nahuatl" falla en 'tres-vocales(hay que ver los criterios de poner la H) - Terminar 'tres-vocales
 	- Analizar bien las secuecias de 3 vocales seguidas.
 	- Trabajar en rima y metrica.
-	- Convertir de formato (c a <i-tilde> a) a "caía" (para SBCL).
 	- ver por qué da error de codificación en win pero corre bien en *nix
+	- poner en el readme el tratamiento a UTF-8 (setf SB-IMPL::*DEFAULT-EXTERNAL-FORMAT* :UTF-8)
