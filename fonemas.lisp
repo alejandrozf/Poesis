@@ -82,10 +82,11 @@
 
 (defun gf-caso-l (palabra i)
   (let ((tmp (next-char palabra i)))
-    (cond ((equal (char-upcase tmp) #\L)) 
-	  (mark-to-pass) (make-fonema :valor "LL"
-				      :simbolo "Y"))
-    (t (make-fonema :valor "L"))))
+    (cond ((equal (char-upcase tmp) #\L) 
+			(mark-to-pass) 
+			(make-fonema :valor "LL"
+			   	      :simbolo "Y"))
+    (t (make-fonema :valor "L")))))
 
 (defun gf-caso-g (palabra i) 
 	(let ((tmp (next-char palabra i)))
@@ -97,17 +98,17 @@
 		 (mark-to-pass) (make-fonema :valor "GL"))
 		((equal (char-upcase tmp) #\R) 
 		 (mark-to-pass) (make-fonema :valor "GR"))
-		((or (eq tmp #\U00FC) (eq tmp #\U00DC))
+		((or (eq tmp #\U00FC) (eq tmp #\U00DC))	;u con dierisis
 		 (mark-to-pass) (make-fonema :valor "GÜ" 
 					     :simbolo "W"))
 		((and tmp
 		      (and (equal (char-upcase tmp) #\U) 
-			   (in-ei? (nth (+ i 2) palabra)))) 
+			   (in-ei? (aref palabra (+ i 2))))) 
 		 (mark-to-pass) (make-fonema :valor "GU"
 					     :simbolo "G"))
 		((and tmp 
 		      (and (equal (char-upcase tmp) #\U) 
-			   (in-ao? (nth (+ i 2) palabra))))
+			   (in-ao? (aref palabra (+ i 2)))))
 		 (mark-to-pass) (make-fonema :valor "GU" 
 					     :simbolo "G"))
 		(t (make-fonema :valor "G")))))

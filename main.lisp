@@ -14,6 +14,7 @@
 (defparameter *autor* "Alejandro Zamora Fonseca")
 (defparameter *email* "ale2014.zamora@gmail.com")
 
+#+sbcl
 (setf SB-IMPL::*DEFAULT-EXTERNAL-FORMAT* :UTF-8)
     
 (defun bienvenida ()
@@ -41,17 +42,21 @@
            4- Para determinar si dos palabras riman, teclee:
 			<espacio>  <tipo_de_rima> <espacio> <palabra1> <espacio> <palabra2>
 		   Nota: <tipo_de_rima> = asonante|consonante.
-		   -------------------	
-		   Inserte su opción:"))
+		   -------------------
+		   "))
 
 (defun procesar-seleccion () 
-  (let ((opt (read-char)))
-    (or (eql opt #\0)
-	 (let ((text (read-line)))
-	   (cond ((eql opt #\1) (princ (silabas->cadena text)))
-		 ((eql opt #\2) (princ (acentuacion text)))
-		 ((eql opt #\3) (princ (silabas-metricas (split-string text #\space))))
-		 (t (princ "RIMA AUN NO COMPLETA")))))))
+  (princ "
+		  Inserte su opción: ")
+  (let* ((raw_text (read-from-string (format nil "(~a)" (read-line))))
+	     (opt (car raw_text))
+	     (text (mapcar #'symbol-name (cdr raw_text))))
+	(cond ((eql opt 0) nil)
+		  ((eql opt 1) (princ (silabas->cadena (car text))))
+		  ((eql opt 2) (princ (acentuacion (car text))))
+		  ((eql opt 3) (princ (silabas-metricas text )))
+		  ((eql opt 4) (princ "RIMA AUN NO COMPLETA"))
+		  (t  (princ "Opción no válida")))))
 		 
 
 (defun main ()
@@ -59,6 +64,4 @@
   (prompt)
   (loop named global
       while t
-	  do (and (procesar-seleccion) (return-from global 'Ha_cerrado_el_programa))))
-
-(main)
+	  do (or (procesar-seleccion) (return-from global "Ha cerrado el programa"))))
