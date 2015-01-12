@@ -28,7 +28,7 @@
 		 )
 		 
 ;;Si no es una lista de listas 
-;;(o sea si es el primer elemento del reduce)
+;;(o sea, si es el primer elemento del reduce)
 (defun simple-list? (c)
 	(atom (car c)))
 

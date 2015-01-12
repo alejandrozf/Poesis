@@ -36,4 +36,3 @@
 	do (push i word)
 	finally (return (reverse result))))
 
-(split-string "ITA y Ale")
