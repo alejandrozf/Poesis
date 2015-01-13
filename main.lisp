@@ -15,7 +15,8 @@
 (defparameter *email* "ale2014.zamora@gmail.com")
 
 #+sbcl
-(setf SB-IMPL::*DEFAULT-EXTERNAL-FORMAT* :UTF-8)
+(eval-when (compile load eval)
+	(setf SB-IMPL::*DEFAULT-EXTERNAL-FORMAT* :UTF-8))
     
 (defun bienvenida ()
   (format t "Este es ~a en su versión ~a.

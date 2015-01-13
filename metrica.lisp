@@ -2,6 +2,12 @@
 
 ;;Testear todo el modulo
 
+(defun silabas-metricas->cadena (lista-palabras)
+	(mapcar (lambda (c) 
+				(reduce (lambda (x y) (concatenate 'string x (fonema-valor y))) c 
+				:initial-value "")) 
+			(silabas-metricas lista-palabras)))
+
 ;;revisar bien las sigs 3 funciones
 (defun silabas-metricas (lista-palabras)
 	(reduce (lambda (c d) 
