@@ -82,11 +82,12 @@
 
 (defun gf-caso-l (palabra i)
   (let ((tmp (next-char palabra i)))
-    (cond ((equal (char-upcase tmp) #\L) 
+	(cond ((null tmp) (make-fonema :valor "L"))
+		  ((equal (char-upcase tmp) #\L) 
 			(mark-to-pass) 
 			(make-fonema :valor "LL"
-			   	      :simbolo "Y"))
-    (t (make-fonema :valor "L")))))
+					:simbolo "Y"))
+		  (t (make-fonema :valor "L")))))
 
 (defun gf-caso-g (palabra i) 
 	(let ((tmp (next-char palabra i)))

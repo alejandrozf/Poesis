@@ -14,9 +14,6 @@
 (defparameter *autor* "Alejandro Zamora Fonseca")
 (defparameter *email* "ale2014.zamora@gmail.com")
 
-#+sbcl
-(eval-when (compile load eval)
-	(setf SB-IMPL::*DEFAULT-EXTERNAL-FORMAT* :UTF-8))
     
 (defun bienvenida ()
   (format t "Este es ~a en su versión ~a.
@@ -55,7 +52,7 @@
 	(cond ((eql opt 0) nil)
 		  ((eql opt 1) (princ (silabas->cadena (car text))))
 		  ((eql opt 2) (princ (acentuacion (car text))))
-		  ((eql opt 3) (princ (silabas-metricas text )))
+		  ((eql opt 3) (princ (silabas-metricas->cadena text )))
 		  ((eql opt 4) (princ "RIMA AUN NO COMPLETA"))
 		  (t  (princ "Opción no válida")))))
 		 

@@ -17,9 +17,17 @@
 	(reduce (lambda (x y) (concatenate 'string x (fonema-valor y))) 
 			(cdr (silabas palabra))
 			:initial-value ""))
+
+
+(defun silabas->pprint (palabra)
+	(mapcar (lambda (c) 
+				(reduce (lambda (x y) (concatenate 'string x (fonema-valor y))) c 
+				:initial-value "")) 
+			(silabas->lista palabra)))			
+			
 ;;Para convertir al siguiente formato 
-;;'(a b r a z o) ->'((a) (b r a) (z o)) que es util para otros modulos
-(defun silabas->lista (palabra)
+;;'(a b r a z o) ->'((a) (b r a) (z o)) que es en cierta forma útil
+(defun silabas->lista (palabra)				;;pretty dirty ...
 	(let ((acc nil) (result nil))
 		(loop for i in (append (cdr (silabas palabra)) 
 								(list (make-fonema :valor "-"))) 

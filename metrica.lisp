@@ -2,7 +2,7 @@
 
 ;;Testear todo el modulo
 
-(defun silabas-metricas->cadena (lista-palabras)
+(defun silabas-metricas->pprint (lista-palabras)
 	(mapcar (lambda (c) 
 				(reduce (lambda (x y) (concatenate 'string x (fonema-valor y))) c 
 				:initial-value "")) 
@@ -27,11 +27,8 @@
 			
 ;;ver el caso de si hay h intermedia
 (defun puente? (silaba1 silaba2)
-	nil
-	; (and silaba1
-		 ; (vocal? (car (last silaba1))) 
-		 ; (vocal? (car (last silaba2))))
-		 )
+	(and (vocal? (car (last silaba1))) 
+		 (vocal? (car silaba2))))
 		 
 ;;Si no es una lista de listas 
 ;;(o sea, si es el primer elemento del reduce)
