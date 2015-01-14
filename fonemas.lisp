@@ -154,10 +154,13 @@
 		      (t (check (subseq palabra (1+ i) size))))))
 		  
 (defun gf-caso-y (palabra i)
-  (cond ((zerop i) (make-fonema :valor "Y" :simbolo 'y))
-	      ((= i (1- (length palabra))) (make-fonema :valor "Y"
+  (cond ((zerop i) 
+		  (if (next-char palabra i)
+			(make-fonema :valor "Y" :simbolo 'y)
+			(make-fonema :valor "Y" :simbolo "I")))
+	     ((= i (1- (length palabra))) (make-fonema :valor "Y"
 							:simbolo "I")) 
-		  ((encliticos palabra i) (make-fonema  :valor "Y"
+		 ((encliticos palabra i) (make-fonema  :valor "Y"
 							:simbolo "I"))
 		  (t (make-fonema :valor "Y" :simbolo 'y))))
 

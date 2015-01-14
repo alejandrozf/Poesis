@@ -1,9 +1,4 @@
 Test que fallan:
-	- "guayma" se silabea bien pero la 'y no se trata como vocal. 
-	  Parece que la 'y a mitad de palabra se comporta como vocal si le 
-	  sigue una consonante. 
-	- "nahuatl" falla en 'tres-vocales(hay que ver los criterios de poner la H) - Terminar 'tres-vocales
-	- Analizar bien las secuecias de 3 vocales seguidas.
 	- Trabajar en rima y metrica.
-	- ver por qué da error de codificación en win pero corre bien en *nix
 	- poner en el readme el tratamiento a UTF-8 (setf SB-IMPL::*DEFAULT-EXTERNAL-FORMAT* :UTF-8)
+	- analizar la "y" como vocal en el caso que corresponda

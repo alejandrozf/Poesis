@@ -15,11 +15,18 @@
 					(append-to-last c d) 
 					(append-to-list c d)))
 			(mapcan #'silabas->lista lista-palabras)))
+
+
+;;Si no es una lista de listas 
+;;(o sea, si es el primer elemento del reduce)
+(defun simple-list? (c)
+	(atom (car c)))			
+			
 ;;Para concatenar un valor al ultimo valor de 
 ;;una lista.  
 (defun append-to-last (c d)
 	(cond ((simple-list? c) (append c d))
-		  ((t (append (butlast c) (car (last c)) d)))))	
+		  (t (append (butlast c) (last c) d))))	
 
 (defun append-to-list (c d)
 	(cond ((simple-list? c) (append (list c) (list d)))
@@ -27,13 +34,10 @@
 			
 ;;ver el caso de si hay h intermedia
 (defun puente? (silaba1 silaba2)
-	(and (vocal? (car (last silaba1))) 
-		 (vocal? (car silaba2))))
+	; (break)
+	(and (vocal? (last-atom silaba1)) 
+		 (vocal? (first-atom silaba2))))
 		 
-;;Si no es una lista de listas 
-;;(o sea, si es el primer elemento del reduce)
-(defun simple-list? (c)
-	(atom (car c)))
 
 ;;tratar de integrarla con 'silabas-metricas
 (defun numero-silabas-metricas (lista-palabras)

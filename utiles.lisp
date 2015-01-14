@@ -36,3 +36,25 @@
 	do (push i word)
 	finally (return (reverse result))))
 
+(defun last1 (lst)
+	(car (last lst)))	
+	
+	
+(defun single (lst)
+	(and (consp lst) (not (cdr lst))))	
+	
+;;Nos da el ultimo atomo de cualquier lista	
+(defun last-atom (llist)
+	(loop with l = llist 
+		while (consp l)
+		do (setq l (last1 l))
+		finally (return l)))
+
+(defun first-atom (llist)
+	(loop with l = llist 
+		while (consp l)
+		do (setq l (car l))
+		finally (return  l)))
+
+		
+
