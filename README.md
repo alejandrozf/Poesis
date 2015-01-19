@@ -5,6 +5,7 @@ a palabras en español(castellano).
 Actualmente brinda las siguientes opciones:
 
 1.- Dividir en sílabas una palabra
+
 Ejemplo: 
 NLPES> (silabas->cadena "programador")
 "PRO-GRA-MA-DOR"
