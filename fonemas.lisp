@@ -1,3 +1,4 @@
+(in-package :nlpes)
 ;; DETECCION DE GRUPOS FONICOS EN CASTELLANO
  
 (load "vocales") 

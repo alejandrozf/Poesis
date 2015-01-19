@@ -1,3 +1,5 @@
+(in-package :nlpes)
+
 ;;Funciones y macros utiles
 (defvar *pass* nil) 
 (defun pass ()
