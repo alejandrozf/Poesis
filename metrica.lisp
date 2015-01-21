@@ -1,6 +1,6 @@
 (in-package :nlpes)
 
-(load "acentuacion")
+;(load "acentuacion")
 
 ;;Testear todo el modulo
 

@@ -1,6 +1,6 @@
 (in-package :nlpes)
 
-(load "fonemas")
+;(load "fonemas")
 
 (defun separador (bandera)
   (and bandera 

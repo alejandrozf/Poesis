@@ -1,6 +1,6 @@
 (in-package :nlpes)
 
-(load "acentuacion")
+;(load "acentuacion")
 					; RIMA
 
 					; Es la igualdad, en una composicion poetica, entre sonidos de 

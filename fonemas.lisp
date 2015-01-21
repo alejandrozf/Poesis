@@ -1,10 +1,10 @@
 (in-package :nlpes)
 ;; DETECCION DE GRUPOS FONICOS EN CASTELLANO
  
-(load "vocales") 
-(load "utiles")
+;(load "vocales") 
+;(load "utiles")
 
-;;Esta funcion determina los caracteres (mas especificamente las 
+;;Esta funcion determinar los caracteres (mas especificamente las 
 ;;consonantes) que tienen su sonido inherente unicamente a su simbolo.
 (defun sonido-literal? (caracter)
 	(member caracter

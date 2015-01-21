@@ -1,7 +1,6 @@
 (in-package :nlpes)
 
 ;;CLASIFICAR LA PALABRA DE ACUERDO A LA FUERZA DE PRONUNCIACION
-(load "silabas")
 
 ;;Esta funcion devuelve la clasificacion de la palabra
 ;;y ademas la ruta desde la vocal acentuada hasta el final de la palabra.
@@ -10,7 +9,7 @@
 	 (n (length lista-silabas)))
     (loop for i 
        from 0
-       for silaba in	lista-silabas
+       for silaba in lista-silabas
        if (and (tilde? silaba) 
 	       (< i (- n 2))) 
        return (values 'ESDRUJULA 

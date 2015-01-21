@@ -1,7 +1,7 @@
 ;;FUNCIONES DE CLASIFICACION DE VOCALES y SECUENCIAS VOCALICAS
 (in-package :nlpes)
 
-(load "modelo")
+;(load "modelo")
 
 (defun in-aou? (caracter)
   (when caracter 
