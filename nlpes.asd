@@ -1,17 +1,19 @@
-(in-package :asdf)
+(in-package :cl-user)
 
-(defpackage :nlpes
+(defpackage :nlpes-asd
   (:use :cl :asdf))
 
-(in-package :nlpes)
+(in-package :nlpes-asd)
 
 (defsystem :nlpes
   :description "Some Natural Language Processing tools in Spanish(ES) language.
                Warning: Comments,documentation,etc are in Spanish!"
   :version "0.0.1"
+  :serial t
   :author "Alejandro Zamora Fonseca <ale2014.zamora@gmail.com>"
   :licence "MIT License"
-  :components ((:file "modelo")
+  :components ((:file "package") 
+	       (:file "modelo")
 	       (:file "utiles")
 	       (:file "vocales" :depends-on ("modelo"))
 	       (:file "fonemas" :depends-on ("utiles" "vocales"))
