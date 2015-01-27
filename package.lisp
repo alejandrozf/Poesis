@@ -4,7 +4,7 @@
   (:use :cl)
   (:export 
    :silabas->cadena
-   :acentacion
+   :acentuacion
    :rima-asonante
    :rima-consonante
    :silabas-metricas->pprint))
