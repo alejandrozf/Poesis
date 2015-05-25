@@ -1,8 +1,8 @@
-##Esta es una colección de algunas utilidades para hacer NLP 
-##a palabras en español(castellano).
+Esta es una colección de algunas utilidades para hacer NPL 
+a palabras en español(castellano).
 
 
-#Actualmente brinda las siguientes opciones:
+Actualmente brinda las siguientes opciones:
 
 1.- Dividir en sílabas una palabra
 
@@ -33,6 +33,6 @@ NLPES> (rima-asonante "volaron" "pegados")
 T
 
 4.- Determinar las silabas métricas de una oración (o verso)
-NLPES> (silabas-metricas->pprint "Los programas y los poemas")
+NLPES> (silabas-metricas->pprint '("Los" "programas" "y" "los" "poemas"))
 ("LOS" "PRO" "GRA" "MAS" "Y" "LOS" "POE" "MAS")
 

@@ -71,5 +71,10 @@
 				    (cons (EDUVA (car l2)) 
 					  (cdr l2)))))))
 
+(defun rima (palabra1 palabra2 &optional (tipo-rima 'consonante)
+	     (if (eq tipo-rima 'consonante)
+		 (rima-consonante palabra1 palabra2)
+		 (rima-asonante palabra1  palabra2)))) 
+
 (defun extraer-vocales (seccion-palabra)
   (remove-if-not #'vocal? seccion-palabra))
